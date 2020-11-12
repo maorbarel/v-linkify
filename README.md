@@ -32,7 +32,7 @@ _component.vue_
 import { vLinkify as linkify } from  "v-linkify";
 
 export default {
-     directives: {
+   directives: {
       linkify
    }
 }
