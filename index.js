@@ -1,4 +1,4 @@
-export const linkify = {
+export const vLinkify = {
    bind: function (el, binding) {
       let urlPattern = /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gim;
       let pseudoUrlPattern = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
@@ -30,7 +30,7 @@ export const linkify = {
 }
 export default {
    install(Vue, options) {
-      Vue.directive('linkify', linkify)
+      Vue.directive('linkify', vLinkify)
    }
 }
 function createOptions(params){
