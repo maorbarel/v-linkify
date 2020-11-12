@@ -13,13 +13,12 @@ export const vLinkify = {
       ].flat();
 
       if (matchedResults) {
-         var options = createOptions(binding?.value)
-
+         var options = createOptions(binding.value)
          matchedResults.forEach(result => {
-            if (result.match(emailAddressPattern)?.length) {
+            if (result.match(emailAddressPattern) !== null) {
                modifiedText = modifiedText.replace(result, `<a ${options} href="mailto:${result}">${result}</a>`)
             }
-            if (result.match(urlPattern)?.length || result.match(pseudoUrlPattern)?.length) {
+            if (result.match(urlPattern) !== null || result.match(pseudoUrlPattern) !== null) {
                var prefix = result.toLowerCase().indexOf('http') === -1 && result.toLowerCase().indexOf('ftp') === -1 ? '//' : '';
                modifiedText = modifiedText.replace(result, `<a ${options} href="${prefix + result.trim()}">${result}</a>`)
             }
@@ -34,8 +33,8 @@ export default {
    }
 }
 function createOptions(params){
-   if(typeof params === 'object' && params !== null && !Array.isArray(params)){
-      var className = params?.className ? `class="${params.className}"` : '';
+   if(params && typeof params === 'object' && params !== null && !Array.isArray(params)){
+      var className = params.className ? `class="${params.className}"` : '';
       var target = `target="${params.target || '_blank'}"`;
       return `${className} ${target}`
    }else{
