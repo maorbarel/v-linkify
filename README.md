@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://img.techpowerup.org/201112/d440mmj72v2vi7ad76ir-1.jpg" alt="vLinkify logo" />
+    <img src="https://img.techpowerup.org/201112/d440mmj72v2vi7ad76ir-2.jpg" alt="vLinkify logo" />
     <br>
     v-linkify
     <br>
