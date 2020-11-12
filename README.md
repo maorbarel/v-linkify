@@ -9,6 +9,7 @@
 $ npm install v-linkify
 ```
 
+## Options
 
 ## Basic Usage
 

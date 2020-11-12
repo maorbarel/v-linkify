@@ -1,0 +1,28 @@
+{
+  "name": "v-linkify",
+  "version": "1.0.0",
+  "description": "A simple Vue directive to turn URL's and emails into clickable links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maorbarel/v-linkify.git"
+  },
+  "keywords": [
+    "vue",
+    "directive",
+    "url",
+    "urlify",
+    "link",
+    "linkify",
+    "vuejs"
+  ],
+  "author": "Maor Barel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maorbarel/v-linkify/issues"
+  },
+  "homepage": "https://github.com/maorbarel/v-linkify#readme"
+}
