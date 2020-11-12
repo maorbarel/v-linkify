@@ -38,7 +38,6 @@ export default {
 }
 ```
 ## Basic Usage
-_component.vue_
 ```js
 <template>
    <div v-linkify>
@@ -50,7 +49,6 @@ _component.vue_
 ```
 
 ## Advanced Usage
-_component.vue_
 ```js
 <template>
    <div v-linkify="{ className: 'myClassName', target: '_self' }">
