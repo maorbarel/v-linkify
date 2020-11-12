@@ -1,3 +1,14 @@
+<h1 align="center">
+    <img src="https://img.techpowerup.org/201112/d440mmj72v2vi7ad76ir-1.jpg" alt="vLinkify logo" />
+    <br>
+    v-linkify
+    <br>
+</h1>
+<p align="center" style="font-size: 1.2em;">
+    The source code for <a href="https://www.npmjs.com/package/v-linkify">v-linkify</a> a VueJS <a href="https://vuejs.org/v2/guide/custom-directive.html">Directive</a>.
+</p>
+
+
 # v-linkify
 > A simple Vue directive to turn URL's and emails into clickable links.
 > NO dependencies!
