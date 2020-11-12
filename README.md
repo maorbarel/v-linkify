@@ -30,11 +30,11 @@ Vue.use(vLinkify)
 ## Install locally
 _component.vue_
 ```js
-import {vLinkify} from "v-linkify";
+import { vLinkify as linkify } from  "v-linkify";
 
-const component = {
-   directives: {
-      vLinkify
+export default {
+     directives: {
+      linkify
    }
 }
 ```
@@ -44,7 +44,8 @@ _component.vue_
 <template>
    <div v-linkify>
       v-linkify https://github.com/maorbarel/v-linkify
-      Vue directive to parse links (urls, emails, etc.) in text into clickable links
+      Vue directive to parse links (urls, emails, etc.)
+      in text into clickable links
    </div>
 </template>
 ```
@@ -55,7 +56,8 @@ _component.vue_
 <template>
    <div v-linkify="{ className: 'myClassName', target: '_self' }">
       v-linkify https://github.com/maorbarel/v-linkify
-      Vue directive to parse links (urls, emails, etc.) in text into clickable links
+      Vue directive to parse links (urls, emails, etc.) 
+      in text into clickable links
    </div>
 </template>
 ```
