@@ -1,30 +1,32 @@
 export const vLinkify = {
    bind: function (el, binding) {
+
       var urlPattern = /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gim;
       var pseudoUrlPattern = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
       var emailAddressPattern = /[\w.]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+/gim;
 
-      var modifiedText = el.textContent;
+      el.innerHTML = el.textContent.split(' ').map(text => {
 
-      var matchedResults = [
-         ...modifiedText.matchAll(emailAddressPattern), 
-         ...modifiedText.matchAll(urlPattern), 
-         ...modifiedText.matchAll(pseudoUrlPattern)
-      ].flat();
+         var matchedResults = [
+            ...text.matchAll(emailAddressPattern), 
+            ...text.matchAll(urlPattern), 
+            ...text.matchAll(pseudoUrlPattern)
+         ].flat();
 
-      if (matchedResults) {
-         var options = createOptions(binding.value)
-         matchedResults.forEach(result => {
-            if (result.match(emailAddressPattern) !== null) {
-               modifiedText = modifiedText.replace(result, `<a ${options} href="mailto:${result}">${result}</a>`)
-            }
-            if (result.match(urlPattern) !== null || result.match(pseudoUrlPattern) !== null) {
-               var prefix = result.toLowerCase().indexOf('http') === -1 && result.toLowerCase().indexOf('ftp') === -1 ? '//' : '';
-               modifiedText = modifiedText.replace(result, `<a ${options} href="${prefix + result.trim()}">${result}</a>`)
-            }
-         });
-      }
-      el.innerHTML = modifiedText
+         if(matchedResults.length){
+            var options = createOptions(binding.value);
+            matchedResults.forEach(result => {
+               if (result.match(emailAddressPattern) !== null) {
+                  text = text.replace(result, `<a ${options} href="mailto:${result}">${result}</a>`)
+               }
+               if (result.match(urlPattern) !== null || result.match(pseudoUrlPattern) !== null) {
+                  var prefix = result.toLowerCase().indexOf('http') === -1 && result.toLowerCase().indexOf('ftp') === -1 ? '//' : '';
+                  text = text.replace(result, `<a ${options} href="${prefix + result.trim()}">${result}</a>`)
+               }
+            });
+         }
+         return text;
+      }).join(' ')
    }
 }
 export default {
