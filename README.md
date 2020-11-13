@@ -9,6 +9,16 @@
 </p>
 
 
+![NPM Version](https://img.shields.io/npm/v/v-linkify?style=flat-square)
+![NPM Dependencies](https://img.shields.io/david/maorbarel/v-linkify?style=flat-square)
+![NPM Downloads](https://img.shields.io/npm/dw/v-linkify?style=flat-square)
+![MIT License](https://img.shields.io/github/license/maorbarel/v-linkify?style=flat-square?style=flat-square)
+<br>
+
+![Git Stars](https://img.shields.io/github/stars/maorbarel?style=social)
+![Git fork](https://img.shields.io/github/forks/maorbarel/v-linkify?style=social)
+
+
 > A simple Vue directive to turn URL's and emails into clickable links.
 > NO dependencies!
 
@@ -62,3 +72,10 @@ export default {
 ## Options
 - `className | String`
 - `target | String, _blank By default`
+
+## Authors
+[Maor Barel](https://www.linkedin.com/in/maorbarel "Personal website")
+
+## License
+---
+MIT © [Maor Barel](https://www.linkedin.com/in/maorbarel "Personal website")
