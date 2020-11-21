@@ -11,7 +11,7 @@
 
 ![NPM Version](https://img.shields.io/npm/v/v-linkify?style=flat-square)
 ![NPM Dependencies](https://img.shields.io/david/maorbarel/v-linkify?style=flat-square)
-![NPM Downloads](https://img.shields.io/npm/dw/v-linkify?style=flat-square)
+![NPM Downloads](https://img.shields.io/npm/dt/v-linkify?style=flat-square)
 ![MIT License](https://img.shields.io/github/license/maorbarel/v-linkify?style=flat-square?style=flat-square)
 <br>
 
