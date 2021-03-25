@@ -2,7 +2,7 @@ export const vLinkify = {
    bind: function (el, binding) {
 
       var urlPattern = /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gim;
-      var pseudoUrlPattern = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+      var pseudoUrlPattern = /\bwww\.[\S]+\.[\S]+/gim;
       var emailAddressPattern = /[\w.]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+/gim;
 
       el.innerHTML = el.textContent.split(' ').map(text => {
