@@ -1,4 +1,5 @@
 import { REGEX_PATTERN } from './utils/constants.js';
+import { createTargetOptions } from './utils/utils.js';
 
 export const vLinkify = {
    bind: function (el, binding) {
@@ -12,7 +13,7 @@ export const vLinkify = {
          ].flat();
 
          if(matchedResults.length){
-            var options = createOptions(binding.value);
+            var options = createTargetOptions(binding.value);
             matchedResults.forEach(result => {
                if (result.match(REGEX_PATTERN.EMAIL_ADDRESS) !== null) {
                   text = text.replace(result, `<a ${options} href="mailto:${result}">${result}</a>`)
@@ -31,13 +32,4 @@ export default {
    install(Vue, options) {
       Vue.directive('linkify', vLinkify)
    }
-}
-function createOptions(params){
-   if(params && typeof params === 'object' && params !== null && !Array.isArray(params)){
-      var className = params.className ? `class="${params.className}"` : '';
-      var target = `target="${params.target || '_blank'}"`;
-      return `${className} ${target}`
-   }else{
-      return `target="_blank"`
-   }
-}
+};
