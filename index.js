@@ -1,25 +1,23 @@
+import { REGEX_PATTERN } from './utils/constants.js';
+
 export const vLinkify = {
    bind: function (el, binding) {
-
-      var urlPattern = /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gim;
-      var pseudoUrlPattern = /\bwww\.[\S]+\.[\S]+/gim;
-      var emailAddressPattern = /[\w.]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+/gim;
 
       el.innerHTML = el.textContent.split(' ').map(text => {
 
          var matchedResults = [
-            ...text.matchAll(emailAddressPattern), 
-            ...text.matchAll(urlPattern), 
-            ...text.matchAll(pseudoUrlPattern)
+            ...text.matchAll(REGEX_PATTERN.EMAIL_ADDRESS), 
+            ...text.matchAll(REGEX_PATTERN.URL), 
+            ...text.matchAll(REGEX_PATTERN.PSEUDO_URL)
          ].flat();
 
          if(matchedResults.length){
             var options = createOptions(binding.value);
             matchedResults.forEach(result => {
-               if (result.match(emailAddressPattern) !== null) {
+               if (result.match(REGEX_PATTERN.EMAIL_ADDRESS) !== null) {
                   text = text.replace(result, `<a ${options} href="mailto:${result}">${result}</a>`)
                }
-               if (result.match(urlPattern) !== null || result.match(pseudoUrlPattern) !== null) {
+               if (result.match(REGEX_PATTERN.URL) !== null || result.match(REGEX_PATTERN.PSEUDO_URL) !== null) {
                   var prefix = result.toLowerCase().indexOf('http') === -1 && result.toLowerCase().indexOf('ftp') === -1 ? '//' : '';
                   text = text.replace(result, `<a ${options} href="${prefix + result.trim()}">${result}</a>`)
                }
