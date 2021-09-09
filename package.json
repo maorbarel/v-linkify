@@ -1,6 +1,6 @@
 {
   "name": "v-linkify",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A simple Vue directive to turn URL's and emails into clickable links",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
     "urlify",
     "link",
     "linkify",
-    "vuejs"
+    "vuejs",
+    "reactive"
   ],
   "author": "Maor Barel",
   "license": "ISC",
