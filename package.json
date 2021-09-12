@@ -1,6 +1,6 @@
 {
   "name": "v-linkify",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A simple Vue directive to turn URL's and emails into clickable links",
   "main": "dist/index.js",
   "scripts": {
