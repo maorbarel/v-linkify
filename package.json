@@ -1,10 +1,10 @@
 {
   "name": "v-linkify",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A simple Vue directive to turn URL's and emails into clickable links",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/maorbarel/v-linkify/issues"
   },
-  "homepage": "https://github.com/maorbarel/v-linkify#readme"
+  "homepage": "https://github.com/maorbarel/v-linkify#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  }
 }
