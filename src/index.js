@@ -1,17 +1,28 @@
 import findLinksAndReplace from "./utils/findLinksAndReplace.js";
 
+function applyDirective(el, binding, vnode) {
+  const text =
+    typeof vnode?.children === "string"
+      ? vnode.children
+      : vnode?.children?.[0]?.text || vnode?.children?.[0]?.children || "";
+
+  if (text) {
+    el.textContent = text;
+  }
+  findLinksAndReplace(el, binding?.value);
+}
+
 export const vLinkify = {
-  bind: function (el, binding) {
-    findLinksAndReplace(el, binding?.value);
-  },
-  componentUpdated: function(el, binding, vNode) {
-    const newEl = el;
-    newEl.textContent = vNode?.children[0]?.text || '';
-    findLinksAndReplace(newEl, binding?.value);
-  },
+  // Vue 2
+  bind: applyDirective,
+  componentUpdated: applyDirective,
+  // Vue 3
+  mounted: applyDirective,
+  updated: applyDirective,
 };
+
 export default {
-  install(Vue, options) {
-    Vue.directive("linkify", vLinkify);
+  install(app) {
+    app.directive("linkify", vLinkify);
   },
 };
