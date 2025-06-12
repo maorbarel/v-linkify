@@ -19,7 +19,7 @@
 ![Git fork](https://img.shields.io/github/forks/maorbarel/v-linkify?style=social)
 
 
-> A simple Vue directive to turn URL's and emails into clickable links.
+> A simple Vue directive to turn URL's, emails and phone numbers into clickable links.
 > NO dependencies!
 
 ## Installation
@@ -52,7 +52,7 @@ export default {
 <template>
    <div v-linkify>
       v-linkify https://github.com/maorbarel/v-linkify
-      Vue directive to parse links (urls, emails, etc.)
+      Vue directive to parse links (urls, emails, phones, etc.)
       in text into clickable links
    </div>
 </template>
@@ -61,9 +61,9 @@ export default {
 ## Advanced Usage
 ```js
 <template>
-   <div v-linkify="{ className: 'myClassName', target: '_self' }">
+   <div v-linkify="{ className: 'myClassName', target: '_self', rel: 'nofollow' }">
       v-linkify https://github.com/maorbarel/v-linkify
-      Vue directive to parse links (urls, emails, etc.) 
+      Vue directive to parse links (urls, emails, phones, etc.)
       in text into clickable links
    </div>
 </template>
@@ -72,6 +72,7 @@ export default {
 ## Options
 - `className | String`
 - `target | String, _blank By default`
+- `rel | String, noopener noreferrer By default`
 
 ## Authors
 [Maor Barel](https://www.linkedin.com/in/maorbarel "Personal website")
