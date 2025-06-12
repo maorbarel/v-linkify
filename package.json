@@ -4,7 +4,7 @@
   "description": "A simple Vue directive to turn URL's and emails into clickable links",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "node --openssl-legacy-provider ./node_modules/webpack/bin/webpack.js --mode production"
   },
   "repository": {
     "type": "git",
