@@ -20,6 +20,7 @@
 
 
 > A simple Vue directive to turn URL's, emails and phone numbers into clickable links.
+Supports Vue 2 and Vue 3.
 > NO dependencies!
 
 ## Installation
@@ -28,12 +29,23 @@ npm install v-linkify
 ```
 
 ## Install globally
-_main.js_
+_main.js (Vue 2)_
 ```js
 import Vue from 'vue';
 import vLinkify from 'v-linkify';
 
 Vue.use(vLinkify)
+```
+
+_main.js (Vue 3)_
+```js
+import { createApp } from 'vue';
+import App from './App.vue';
+import vLinkify from 'v-linkify';
+
+const app = createApp(App);
+app.use(vLinkify);
+app.mount('#app');
 ```
 
 ## Install locally
